@@ -1,0 +1,42 @@
+{
+  "env": {
+    "node": true,
+    "browser": true,
+    "es6": true,
+    "jquery": true
+  },
+  "globals": {
+    "jQuery": true,
+    "$": true,
+    "angular": true,
+    "Oidc": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 6
+  },
+  "ignore": [
+    "node_modules",
+    "dist/**"
+  ],
+  "rules": {
+    "indent": [
+      "error",
+      4
+    ],
+    "linebreak-style": [
+      "error",
+      "windows"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "no-console": 0
+  }
+}

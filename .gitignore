@@ -1,0 +1,13 @@
+dist
+node_modules
+.DS_Store
+.tmp
+.sass-cache
+*.sublime-*
+.idea
+npm-debug.log
+.vscode
+jsconfig.json
+typings
+templates.js
+src

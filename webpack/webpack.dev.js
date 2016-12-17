@@ -25,17 +25,11 @@ module.exports = {
         filename: '[name].bundle.js'
     },
     module: {
-        loaders: [{
-            loader: 'raw',
-            test: /\.(css|html)$/
-        }, {
-            loader: 'babel',
-            test: /\.js$/,
-            exclude: /node_modules/,
-            query: {
-                presets: ['es2015']
-            }
-        }]
+        loaders: [
+            {loader: 'raw', test: /\.css$/},
+            {loader: 'html', test: /\.html$/},
+            {loader: 'babel', test: /\.js$/, exclude: /node_modules/, query: {presets: ['es2015']}}
+        ]
     },
     plugins: [
         new ChunkWebpack({

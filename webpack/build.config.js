@@ -1,9 +1,9 @@
 const buildConfig = {
+    env: 'dev',
     port: 4000,
     devBaseUrl: 'http://localhost',
     paths: {
         dist: './dist/',
-        mainJs: `${root}/app/main/app.module.js`,
         templates: `${root}/app/**/*.html`,
         scripts: [
             `${root}/app/**/*.js`,
@@ -20,7 +20,6 @@ const buildConfig = {
             'angular-messages/angular-messages.js',
             'angular-ui-router/release/angular-ui-router.js',
             'angular-material-data-table/dist/md-data-table.js',
-            'angular-material-data-table/dist/md-data-table-directory.js',
             'angular-loading-bar/build/loading-bar.js',
             'oidc-client/dist/oidc-client.js',
             'ngstorage/ngStorage.js'
@@ -42,4 +41,4 @@ const buildConfig = {
     }
 };
 
-module.exports = buildConfig;
+export { buildConfig };

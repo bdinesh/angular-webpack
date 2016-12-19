@@ -3,18 +3,14 @@
 import path from 'path';
 import webpack from 'webpack';
 import HtmlWebpack from 'html-webpack-plugin';
-import { buildConfig as config } from './build.config';
-import { buildUtil } from './build-util';
+import {buildConfig as config} from './build.config';
+import {buildUtil} from './build-util';
 
-// const webpack = require('webpack'),
-//     path = require('path'),
-//     HtmlWebpack = require('html-webpack-plugin');
 const ChunkWebpack = webpack.optimize.CommonsChunkPlugin,
-    // config = require('./build.config'),
-    // buildUtil = require('./build-util'),
     rootDir = path.resolve(__dirname, '..');
 
 const webpackConfig = {
+    target: 'web',
     context: path.resolve(rootDir, 'src/app'),
     devServer: {
         contentBase: path.resolve(rootDir, 'dist'),
@@ -31,9 +27,10 @@ const webpackConfig = {
     },
     module: {
         loaders: [
-            { use: 'raw-loader', test: /\.css$/ },
-            { use: 'html-loader', test: /\.html$/ },
-            { use: 'babel-loader', test: /\.js$/, exclude: /node_modules/, query: { presets: ['es2015'] } }
+            {test: /\.scss$/, use: 'css-loader!sass-loader'},
+            {test: /\.html$/, use: 'html-loader'},
+            {enforce: 'pre', test: /\.js$/,  loader: 'eslint-loader', exclude: /node_modules/},
+            {test: /\.js$/, use: 'babel-loader', exclude: /node_modules/, query: {presets: ['es2015']}}
         ]
     },
     plugins: [

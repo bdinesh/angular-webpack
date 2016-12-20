@@ -28,8 +28,8 @@ const webpackConfig = {
     module: {
         loaders: [
             {test: /\.scss$/, use: 'css-loader!sass-loader'},
-            {test: /\.html$/, use: 'html-loader'},
-            {enforce: 'pre', test: /\.js$/,  loader: 'eslint-loader', exclude: /node_modules/},
+            {test: /\.html$/, use: 'html-loader', query: {minimize: true}},
+            {enforce: 'pre', test: /\.js$/, loader: 'eslint-loader', exclude: /node_modules/},
             {test: /\.js$/, use: 'babel-loader', exclude: /node_modules/, query: {presets: ['es2015']}}
         ]
     },
